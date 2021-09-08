@@ -15,6 +15,9 @@ require (
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/spf13/cobra v1.2.1 // indirect
 	go.starlark.net v0.0.0-20210602144842-1cdb82c9e17a // indirect
+	go.uber.org/atomic v1.9.0 // indirect
+	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/zap v1.19.0 // indirect
 	golang.org/x/arch v0.0.0-20210727222714-28578f966459 // indirect
 	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect
 )
