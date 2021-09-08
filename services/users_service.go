@@ -2,7 +2,8 @@ package services
 
 import (
 	"github.com/katsun0921/bookstore_users-api/domain/users"
-	"github.com/katsun0921/bookstore_users-api/utils/errors"
+  "github.com/katsun0921/bookstore_users-api/utils/date_utils"
+  "github.com/katsun0921/bookstore_users-api/utils/errors"
 )
 
 func GetUser(userId int64) (*users.User, *errors.RestErr) {
@@ -18,6 +19,8 @@ func CreateUser(user users.User) (*users.User, *errors.RestErr) {
 		return nil, err
 	}
 
+	user.Status = users.StatusActive
+	user.DateCreated = date_utils.GetNowDBFormat()
 	if err := user.Save(); err != nil {
 		return nil, err
 	}
@@ -32,16 +35,16 @@ func UpdateUser(isPartial bool, user users.User) (*users.User, *errors.RestErr) 
 	}
 
 	if isPartial {
-	  if user.FirstName != "" {
-	    current.FirstName = user.FirstName
-    }
-    if user.LastName != "" {
-      current.LastName = user.LastName
-    }
-    if user.Email != "" {
-      current.Email = user.Email
-    }
-  } else {
+		if user.FirstName != "" {
+			current.FirstName = user.FirstName
+		}
+		if user.LastName != "" {
+			current.LastName = user.LastName
+		}
+		if user.Email != "" {
+			current.Email = user.Email
+		}
+	} else {
 		current.FirstName = user.FirstName
 		current.LastName = user.LastName
 		current.Email = user.Email
@@ -50,4 +53,14 @@ func UpdateUser(isPartial bool, user users.User) (*users.User, *errors.RestErr) 
 		return nil, err
 	}
 	return current, nil
+}
+
+func DeleteUser(userId int64) *errors.RestErr {
+	user := &users.User{Id: userId}
+	return user.Delete()
+}
+
+func Search(status string) ([]users.User, *errors.RestErr)  {
+  dao := &users.User{}
+  return dao.FindByStatus(status)
 }
