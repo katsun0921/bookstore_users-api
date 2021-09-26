@@ -3,21 +3,19 @@ module github.com/katsun0921/bookstore_users-api
 go 1.16
 
 require (
-	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
-	github.com/gin-gonic/gin v1.7.3 // indirect
-	github.com/go-delve/delve v1.7.0 // indirect
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
-	github.com/mattn/go-colorable v0.1.8 // indirect
+	github.com/gin-gonic/gin v1.7.3
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/json-iterator/go v1.1.11 // indirect
+	github.com/katsun0921/bookstore_oauth-go v0.0.0-20210925035105-45e05c9eedc9
 	github.com/mattn/go-isatty v0.0.13 // indirect
-	github.com/mattn/go-runewidth v0.0.13 // indirect
-	github.com/peterh/liner v1.2.1 // indirect
-	github.com/russross/blackfriday v1.6.0 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
-	github.com/spf13/cobra v1.2.1 // indirect
-	go.starlark.net v0.0.0-20210602144842-1cdb82c9e17a // indirect
+	github.com/mercadolibre/golang-restclient v0.0.0-20170701022150-51958130a0a0 // indirect
+	github.com/modern-go/reflect2 v1.0.1 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
-	go.uber.org/zap v1.19.0 // indirect
-	golang.org/x/arch v0.0.0-20210727222714-28578f966459 // indirect
+	go.uber.org/zap v1.19.0
+	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect
+	golang.org/x/tools v0.1.2 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
